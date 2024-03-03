@@ -3,7 +3,7 @@
 
 A simple Expense Tracker Project which is built using React and Context API. 
 
-### [preview]
+### Preview
 1) Defalult Preview:- 
 ![Expense-Tracker-1](https://github.com/KamaleshPatil13/Expense-Tracker/assets/107297179/4e1a8d50-fc4c-477b-843b-f0335042cd62)
 
