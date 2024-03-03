@@ -7,7 +7,7 @@ export const Transaction = ({ transaction }) => {
   const sign = transaction.amount < 0 ? "-" : "+";
 
   return (
-    <div style={{}}>
+    <div className="transaction">
       <li className={transaction.amount > 0 ? "plus" : "minus"}>
         {transaction.text}{" "}
         <span>

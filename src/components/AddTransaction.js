@@ -4,7 +4,7 @@ import { GlobalContext } from "../context/GlobalState";
 export const AddTransaction = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState();
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const { addTransaction } = useContext(GlobalContext);
 
@@ -12,8 +12,7 @@ export const AddTransaction = () => {
     e.preventDefault();
     if (!text.trim() || amount === 0) {
       setError("Please enter both text and amount.");
-    }
-    else{
+    } else {
       const newTransaction = {
         id: Math.floor(Math.random() * 100000),
         text: text,
@@ -21,19 +20,19 @@ export const AddTransaction = () => {
       };
       addTransaction(newTransaction);
       setText("");
-      setAmount(0);
+      setAmount("");
       setError("");
     }
-   
   };
 
   return (
-    <div>
+    <div className="addTransactiom">
       <h3>Add new transaction</h3>
       <form id="form" onSubmit={handleAddTrandaction}>
         <div className="form-control">
           <label className="label">Text</label>
           <input
+            autoFocus
             type="text"
             id="text"
             value={text}
@@ -42,9 +41,13 @@ export const AddTransaction = () => {
           />
         </div>
         <div className="form-control">
-          <label >
-            <span className="label">Amount</span> <br />
-            (negative - expense, positive - income)
+          <label>
+            <span className="label">Amount</span>
+            <pre className="note">
+              Negative - Expense
+              <br />
+              Positive - income
+            </pre>
           </label>
           <input
             type="number"

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
-export const IncomeExpence = () => {
+export const IncomeExpense = () => {
   const { transactions } = useContext(GlobalContext);
   const amounts = transactions.map((transaction) => transaction.amount);
 
@@ -10,7 +10,7 @@ export const IncomeExpence = () => {
     .reduce((acc, item) => acc + item, 0)
     .toFixed(2);
 
-  const expense =
+  const Expense  =
     amounts
       .filter((item) => item < 0)
       .reduce((acc, item) => acc + item, 0)
@@ -28,7 +28,7 @@ export const IncomeExpence = () => {
         <div className="expence">
           <h4>Expence</h4>
           <h4 id="money-minus" className="money minus">
-            ${expense}
+            ${Expense }
           </h4>
         </div>
       </div>
